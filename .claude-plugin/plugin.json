@@ -1,0 +1,18 @@
+{
+  "name": "joshua-skills",
+  "description": "Conventions, testing, systems and on-call triage skills for my ecosystem.",
+  "version": "0.1.0",
+  "author": {
+    "name": "Joshua Spitalnik"
+  },
+  "homepage": "https://github.com/JoshuaSpitalnik/skills",
+  "repository": "https://github.com/JoshuaSpitalnik/skills",
+  "license": "MIT",
+  "keywords": [
+    "conventions",
+    "testing",
+    "systems",
+    "on-call",
+    "incident-triage"
+  ]
+}

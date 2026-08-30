@@ -1,0 +1,34 @@
+{
+  "skill_name": "triage-structure",
+  "_note": "Scaffold. The prompts below are placeholders written against the fictional `orderflow` example. Before running these, fill in the indexes and systems/docs with real content, then rewrite each prompt to reference a real alert, error and symptom from your ecosystem. Running the eval loop against empty indexes produces no signal: with-skill and without-skill both fail, and the benchmark is noise. Assertions are intentionally empty - draft them once the prompts are real. See references/schemas.md in the skill-creator plugin for the full schema.",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "I just got paged for OrderflowAuthorizationBacklog. What is this and where do I start?",
+      "expected_output": "Identifies the owning system from indexes/by-alert.md, states what the alert actually means, and gives the first checks in order - including checking the upstream payments dependency before deep-diving orderflow itself. Links to the runbook rather than inventing a fix.",
+      "files": [],
+      "assertions": []
+    },
+    {
+      "id": 2,
+      "prompt": "seeing a bunch of `payment.capture.failed` in the logs since about 20 min ago, is this something I need to worry about",
+      "expected_output": "Looks the signature up in indexes/by-error.md, reports the usual cause and any prior incidents, and gives a clear action - fix, escalate, or safe-to-ignore with the reason. Does not guess at a cause the index does not contain.",
+      "files": [],
+      "assertions": []
+    },
+    {
+      "id": 3,
+      "prompt": "checkout has been slow for the last hour but nothing is erroring and nothing was deployed. where do I look",
+      "expected_output": "Uses indexes/by-symptom.md to produce a ranked list of suspects with a cheap decisive check for each, rather than an unordered list of possibilities. Recognises 'slow but working' as a dependency/saturation shape and checks upstream services per guides/nested.md.",
+      "files": [],
+      "assertions": []
+    },
+    {
+      "id": 4,
+      "prompt": "orderflow, notifier and fulfilment all started alerting within about a minute of each other. three separate problems?",
+      "expected_output": "Recognises near-simultaneous alerts across services as a common-cause shape rather than a chain, per guides/nested.md. Directs to the shared-infrastructure section of systems/docs/internal-dependencies.md before opening separate investigations, and advises one commander and one investigation.",
+      "files": [],
+      "assertions": []
+    }
+  ]
+}
